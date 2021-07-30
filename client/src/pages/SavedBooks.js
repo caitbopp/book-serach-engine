@@ -9,23 +9,13 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  // const [userData, setUserData] = useState({});
-  const [userData, setUserData] = useQuery(QUERY_ME);
+  const { data } = useQuery(QUERY_ME);
+  const userData = data?.me || [];
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
 
-  const [deleteBook] = useMutation(REMOVE_BOOK, {
-    update(cache, {data: {deleteBook} }) {
-      try {
-        cache.writeQuery({
-          query: QUERY_ME,
-          data: { me: deleteBook },
-        })}catch (e) {
-          console.error(e);
-        }
-      },
-  });
+  const [deleteBook] = useMutation(REMOVE_BOOK)
 
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
