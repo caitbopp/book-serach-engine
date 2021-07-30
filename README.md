@@ -19,7 +19,7 @@ npm run develop
 ## Usage
 Apollo Client, GraphQl, JWT, React, Apollo-Server-Express, Bcrypt, Express, Mongoose, and jsonWebToken are all required to run this application.
 
-A linked to my deployed page can be found here: [Heroku](https://still-thicket-10545.herokuapp.com/).
+A linked to my deployed page can be found here: [Heroku](https://floating-tor-85512.herokuapp.com/).
 
 <img src="./client/public/project_screenshot.png">
 
